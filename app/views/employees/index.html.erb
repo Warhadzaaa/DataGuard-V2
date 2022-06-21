@@ -1,0 +1,10 @@
+<div class="container">
+  <% @tables.each do |table| %>
+    <%= "Table #{table.number}" %>
+    <ul>
+      <% @employees.where(table_id: table.id).each do |employee| %>
+        <li><%= "#{employee.name} - #{employee.unit}" %></li>
+      <% end %>
+    </ul>
+  <% end %>
+</div>

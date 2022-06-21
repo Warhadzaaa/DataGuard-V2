@@ -1,7 +1,7 @@
 <div class="container m-3">
   <%= button_to "set tables", set_table_employee_path(@employees), method: :patch, class: "btn btn-success mb-3" %>
   <% @tables.each do |table| %>
-    <b><%= "Table #{table.number}" %></b>
+    <b><%= "Table #{table.number + 1}" %></b>
     <ul>
       <% @employees.where(table_id: table.id).each do |employee| %>
         <li><%= employee.name %> - <i style='color:blue'><%= employee.unit %></i></li>
